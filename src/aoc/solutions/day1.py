@@ -24,7 +24,25 @@ def part1(data: list[str]) -> int:
 
 def part2(data: list[str]) -> int:
     """Solve part 2 of the puzzle."""
-    return 282
+    dict2 = {}
+    list1 = []
+    for row in data:
+        item1s, item2s = row.split('   ')
+        item1 = int(item1s)
+        item2 = int(item2s)
+        list1.append(item1)
+        item1, item2 = row.split('   ')
+        dict2[item2] =  dict2.get(item2, 0) + 1
+    
+    similarity = 0
+    for i in list1:
+        print(f"i: {i}, {dict2.get(f"{i}",0)}")
+        similarity = i * dict2.get(f"{i}",0) + similarity
+        print(similarity)
+
+
+
+    return similarity
 
 def solve() -> tuple[int, int]:
     """Solve both parts of the puzzle."""
