@@ -13,7 +13,7 @@ def test_part1():
     ]
     assert part1(test_input) == 2
 
-def test_part1():
+def test_part2():
     test_input = [
         "7 6 4 2 1",
         "1 2 7 8 9",
